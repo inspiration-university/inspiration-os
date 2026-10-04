@@ -1,0 +1,48 @@
+/**
+ * Models deep attachment to a person experienced as a rescuer or gateway.
+ *
+ * The name is metaphorical, not diagnostic.
+ *
+ * @status hypothesis
+ */
+rescuedPuppySyndrome(rescuer) {
+
+    // Phase 1: safety becomes associated with one source.
+    WHEN:
+        distress >= high
+        AND reliefFrom(rescuer) >= high
+
+    DO:
+        safetyAssociation =
+            safetyAssociation + reliefFrom(rescuer)
+
+        attachment =
+            attachment + safetyAssociation
+
+    // Phase 2: emotional survival can replace literal survival.
+    IF rescuerProvidesStability
+       OR rescuerProvidesPossibility
+       OR rescuerProvidesRelief:
+
+        DO:
+            perceivedImportance =
+                perceivedImportance + high
+
+    // Phase 3: the rescuer may be a gateway, not the owner of the capacity.
+    IF newInnerCapacitiesDiscovered:
+
+        DO:
+            gatewayRole = recognizeGateway(rescuer)
+            ownedCapacity = reclaimCapacity()
+
+    RETURN:
+        attachment
+
+    RISKS:
+        overAssigningPowerToRescuer
+        dependency
+        confusingGatewayWithSource
+
+    REPLACEMENT:
+        internalizeGateway()
+}
