@@ -1,0 +1,51 @@
+/**
+ * Feedback loop in systems where authority is concentrated
+ * and bad news is costly to deliver.
+ *
+ * @status supported
+ */
+dictatorshipDilemma(organization) {
+
+    NEEDS:
+        authorityConcentration >= high
+        honestFeedback <= low
+
+    WHEN:
+        badNews
+        OR criticism
+
+    WHILE authorityConcentration >= high
+          AND honestFeedback <= low:
+
+        DO:
+            // 1. Hostility makes truth costly.
+            leaderHostility = leaderHostility + reactionToBadNews
+
+            // 2. Fear changes what information travels upward.
+            teamFear = teamFear + leaderHostility
+            informationFiltering = informationFiltering + teamFear
+
+            // 3. Decisions are made from increasingly distorted data.
+            informationQuality =
+                informationQuality - informationFiltering
+
+            decision = makeDecision(informationQuality)
+
+            // 4. Reality eventually exposes the distortion.
+            outcome = realityTest(decision)
+
+            // 5. Blame raises the future cost of honesty again.
+            IF outcome < expected:
+                blameOthers()
+                leaderHostility = leaderHostility + medium
+                honestFeedback = honestFeedback - medium
+
+    RETURN:
+        brittleSystem
+
+    RISKS:
+        blindness
+        cascadingFailure
+        learnedHelplessness
+        institutionalDishonesty
+}
