@@ -1,0 +1,29 @@
+/**
+ * Simple model of rejection-sensitivity intensity.
+ *
+ * NOTE:
+ * "Rejection Sensitive Dysphoria" is used here as a descriptive label,
+ * not as a diagnostic claim.
+ *
+ * @status hypothesis
+ */
+rejectionSensitiveDysphoria(event) {
+
+    DO:
+        selfValue = myValue()
+        otherValue = theirValue(event)
+        certainty = howCorrectIThinkIAm(event)
+
+        // Original compact model.
+        rsdIntensity =
+            (selfValue - otherValue)
+            * certainty
+
+    RETURN:
+        rsdIntensity
+
+    RISKS:
+        oversimplifyingRejection
+        confusingCertaintyWithAccuracy
+        treatingValueAsObjective
+}
