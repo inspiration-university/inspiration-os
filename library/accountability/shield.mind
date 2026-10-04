@@ -1,0 +1,30 @@
+/**
+ * Protects the self from blame when responsibility feels dangerous.
+ *
+ * Core question: "How do I stay safe?"
+ *
+ * @status hypothesis
+ */
+shield(problem) {
+
+    BELIEF:
+        "Accepting responsibility means accepting punishment."
+
+    WHEN:
+        responsibilityThreatDetected
+
+    DO:
+        minimizeMyRole()
+        explainBeforeSolving()
+        shiftBlame()
+        waitForOthersToMoveFirst()
+
+    RETURN:
+        temporarySelfProtection
+
+    RISKS:
+        delayedResolution
+        trustLoss
+        repeatedFailure
+        defensiveCulture
+}
