@@ -1,84 +1,133 @@
-# Prometheus Kernel 🔥  
-*A Framework for Building Custom Inspiration Systems*  
-Part of the Inspiration-OS Project
+# Inspiration OS 🔥
 
----
+*An open framework for inspecting, composing, and evolving human behavioral scripts.*
 
-## What is the Prometheus Kernel?
+Inspiration OS treats beliefs, habits, emotional responses, decision rules, and social dynamics as **inspectable and composable processes** rather than fixed traits.
 
-The **Prometheus Kernel** is the foundational codebase for building personalized belief systems, self-mythologies, and creative frameworks. It’s the heart of the **Inspiration-OS** — an open-source initiative to distribute meaning, beauty, and inner fire at scale.
+It is written in [MindScript](https://github.com/inspiration-university/mind-script), a human-readable language for modeling behavior and causal systems.
 
-This project is for dreamers, makers, rebels, and gods-in-disguise.
+## Architecture
 
-You are not here to follow.  
-You are here to *create*.
+```text
+MindScript
+    ↓
+Prometheus Kernel
+    ↓
+Standard Library
+    ↓
+Apps
+    ↓
+Distros
+```
 
----
+### MindScript
 
-## Why "Prometheus"?
+The language. It defines script calls, state, conditions, loops, dependencies, and readable causal logic.
 
-In Greek mythology, Prometheus stole fire from the gods and gifted it to humanity. He was punished, of course — because fire is power. Creativity. Consciousness.
+### Prometheus Kernel
 
-This kernel follows in his footsteps — not to destroy old systems, but to offer *a better one*. A system where inspiration isn’t locked behind institutions or personalities, but distributed, decentralized, and deeply personal.
+The smallest reusable primitives: reality evaluation, value comparison, risk assessment, state updates, learning, and basic emotional processes.
 
----
+See [kernel/](kernel/).
 
-## Features
+### Standard Library
 
-🔥 **Build Your Own Mythos**  
-Define your values, archetypes, rituals, goals, and core stories.
+Reusable higher-level models such as:
 
-🧠 **Modular Design**  
-Include only what resonates. Swap out modules. Create your own "distro" (e.g., CreatorOS, CalmOS, WarriorOS, etc.).
+- `missionImpossibleDrive()`
+- `cannotBeBothered()`
+- `accountabilityResponse()`
+- `shield()` / `bridge()`
+- `comfortBeacon()`
+- `idealizationShield()`
+- `rescuedPuppySyndrome()`
+- `prestigeBrandElevation()`
+- `dictatorshipDilemma()`
 
-🔔 **Integrated Practices**  
-Support for rituals, reminders, affirmations, journaling prompts, audio cues, and more.
+See [library/](library/).
 
-🌍 **Open-Source Spirituality**  
-Not a religion. Not a cult. Just a framework for living *on fire* with purpose, truth, and creativity.
+### Apps
 
-👤 **Pseudonymous Safe Spaces**  
-Build under your real name or a chosen persona. Inspired by Satoshi. Supported by shadow.
+Intentional practices that inspect, modify, reinforce, or replace scripts.
 
----
+Current examples include morning rituals, shadow work, and vision mapping.
 
-## Quick Start
+See [apps/](apps/).
 
-1. Clone this repo.
-2. Read `kernel.md` to understand the structure.
-3. Use `config-template.md` to begin defining your personal system.
-4. Share your distro with the community — or keep it private. Your fire, your call.
+### Distros
 
----
+Curated combinations of scripts, values, practices, and defaults for different modes of living or working.
 
-## Example Distros
+Current distro concepts include:
 
-- `ArtistOS`: daily practices for unlocking creative flow.
-- `StartupOS`: rituals and beliefs for resilient entrepreneurship.
-- `GoddessOS`: a mythic path for empowered feminine creators.
-- `BalanceOS`: inspiration for people managing ADHD or overwhelm.
+- MuseOS
+- FoundryOS
+- PhoenixOS
+- SeekerOS
 
----
+See [distros/](distros/).
 
-## Contribute
+## A simple example
 
-- Share your modules
-- Fork and remix
-- Start a conversation
-- Submit ideas, audio tracks, or visual elements
-- Help build the web-based version!
+```mind
+bridge(problem) {
 
----
+    BELIEF:
+        "Accepting responsibility gives me power to fix things."
+
+    WHEN:
+        responsibilityDetected
+
+    DO:
+        acknowledgeMyRole()
+        validateImpact()
+        confirmUnderstanding()
+        offerSolution()
+        followThrough()
+
+    RETURN:
+        repair
+}
+```
+
+The point is not to claim that people literally execute code.
+
+The point is to make recurring patterns explicit enough to inspect, question, compare, test, and replace.
+
+## Modeling principles
+
+- Prefer processes over identity labels.
+- Separate observation from interpretation.
+- Mark speculative models as hypotheses.
+- Keep MindScript readable by non-programmers.
+- Treat models as tools, not diagnoses.
+- Prefer small composable scripts over giant explanations.
+- Use scenarios and outcomes to test whether a model is actually useful.
+
+## Repository map
+
+```text
+kernel/     Prometheus primitives
+library/    reusable MindScript models and conceptual modules
+apps/       intentional practices
+distros/    curated Inspiration OS distributions
+docs/       architecture and modeling documentation
+```
+
+## Status
+
+Inspiration OS is experimental and evolving.
+
+The current focus is building a coherent standard library and using real examples to discover which MindScript constructs are genuinely useful.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-🔥 **GPLv3** — this is yours to build, remix, or reinvent. 
-Prometheus gave you the fire. What you build with it is up to you. 
+GNU GPL v3. See [LICENSE](LICENSE).
 
 ---
 
-## Final Note
-
-Inspiration isn’t scarce. It’s just badly distributed.  
-Let’s change that — one fire-starter at a time.
-
+**Inspiration is not scarce. It is badly distributed.**
