@@ -1,0 +1,32 @@
+/**
+ * Selects an accountability response after something goes wrong.
+ *
+ * @status hypothesis
+ */
+accountabilityResponse(problem) {
+
+    REQUIRES:
+        shield(problem)
+        bridge(problem)
+
+    WHEN:
+        mistakeDetected
+        OR harmfulOutcomeDetected
+
+    // Environment strongly influences which response feels safer.
+    IF punishmentForMistakes > psychologicalSafety:
+        RETURN:
+            shield(problem)
+
+    ELSE:
+        RETURN:
+            bridge(problem)
+
+    /*
+     * Installation:
+     * - reward early disclosure
+     * - separate mistakes from personal worth
+     * - model ownership without humiliation
+     * - reinforce repair, learning, and follow-through
+     */
+}
