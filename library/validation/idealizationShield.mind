@@ -1,0 +1,38 @@
+/**
+ * Models a child's attempt to explain inconsistent attention
+ * without devaluing an important caregiver.
+ *
+ * @status hypothesis
+ */
+idealizationShield(caregiver) {
+
+    REQUIRES:
+        theyArePerfect(caregiver)
+
+    WHEN:
+        attention = inconsistent
+        OR attention = insufficient
+
+    WHILE attention < enough:
+
+        DO:
+            // "If they are perfect, the problem must be me."
+            selfBlame = selfBlame + medium
+
+            tryNewAttentionStrategy()
+
+            // Infer causality from a tiny and biased sample.
+            perceivedControl =
+                mapCorrelation(myActions, caregiverAttention)
+
+            externalValidationDependence =
+                externalValidationDependence + medium
+
+    RETURN:
+        preservedIdealization
+
+    RISKS:
+        chronicSelfBlame
+        falseCausalModels
+        unstableSelfWorth
+}
