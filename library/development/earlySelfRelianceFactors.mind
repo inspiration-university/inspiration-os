@@ -1,0 +1,41 @@
+/**
+ * Simplified developmental map of how responses to early needs
+ * may shape expectations about agency, care, and self-reliance.
+ *
+ * @status hypothesis
+ */
+earlySelfRelianceFactors(need) {
+
+    WHEN:
+        needDetected
+
+    DO:
+        signalNeed()   // e.g. crying in infancy
+
+    IF attention = prompt AND boundaries = healthy:
+        RETURN:
+            secureConfidence
+
+    ELSE IF attention = prompt AND whims = alwaysSatisfied:
+        RETURN:
+            entitlementRisk
+
+    ELSE IF attention = intermittent:
+
+        DO:
+            signalIntensity = signalIntensity + medium
+            searchForPatterns()
+            optimizeSignal()
+
+        RETURN:
+            contingentAttentionStrategy
+
+    ELSE IF attention = absent:
+        RETURN:
+            prematureSelfReliance
+
+    RISKS:
+        overgeneralizingDevelopment
+        ignoringTemperament
+        ignoringLaterCorrectiveExperiences
+}
