@@ -1,0 +1,28 @@
+/**
+ * Models reassurance-seeking after a temporary drop in self-esteem.
+ *
+ * @status hypothesis
+ */
+comfortBeacon() {
+
+    WHEN:
+        selfEsteem < baseline
+
+    WHILE validation < enough:
+
+        DO:
+            // Signal distress strongly enough to be noticed.
+            selfDenigration = selfDenigration + intensity
+            visibleDistress = visibleDistress + intensity
+
+            // Hope that an empathic observer supplies comfort.
+            seekComfort()
+
+    RETURN:
+        temporaryRelief
+
+    RISKS:
+        externalValidationDependence
+        escalatingDistressSignals
+        accidentalEmotionalPressure
+}
