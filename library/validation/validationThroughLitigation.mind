@@ -1,0 +1,39 @@
+/**
+ * Models litigation or legal threats being used as a source of
+ * status, validation, or felt power.
+ *
+ * This is NOT a claim that litigation itself is maladaptive.
+ *
+ * @status hypothesis
+ */
+validationThroughLitigation() {
+
+    REQUIRES:
+        iAmMoreImportantThanThem()
+
+    WHEN:
+        externalValidation < enough
+
+    WHILE externalValidation < enough:
+
+        DO:
+            amplifyConflict()
+            assignExternalBlame()
+
+            // Legal escalation becomes a visible signal of power.
+            threatenLegalAction()
+
+            IF escalationContinues:
+                pursueLegalAction()
+
+            narrateConflictAsStatus()
+
+    RETURN:
+        temporaryPowerSignal
+
+    RISKS:
+        conflictEscalation
+        financialCost
+        damagedRelationships
+        identityBuiltAroundConflict
+}
