@@ -1,0 +1,47 @@
+/**
+ * Decides when further help is unlikely to be useful.
+ *
+ * @status hypothesis
+ * @purpose Protect time/energy and avoid reinforcing dependency.
+ */
+cannotBeBothered(person, situation) {
+
+    REQUIRES:
+        valueComparison()
+        doubt()
+        authenticityCheck()
+        respectCheck()
+
+    // These are signals to investigate, not proof of motive.
+    WHEN:
+        apparentHelplessness
+        OR repeatedOneWayDependence
+
+    DO:
+        authenticity = authenticityCheck(person, situation)
+        reciprocity = respectCheck(person)
+        expectedValue = valueComparison(helping, notHelping)
+        uncertainty = doubt()
+
+    // Strategic apathy is targeted, not global indifference.
+    IF authenticity < credible
+       AND reciprocity < acceptable
+       AND expectedValue < useful:
+
+        RETURN:
+            strategicApathy
+
+    // If uncertainty remains high, avoid overconfident judgment.
+    IF uncertainty > medium:
+        RETURN:
+            limitedHelp
+
+    RETURN:
+        normalHelp
+
+    RISKS:
+        misreadingGenuineNeed
+        cynicism
+        contempt
+        prematureWithdrawal
+}
