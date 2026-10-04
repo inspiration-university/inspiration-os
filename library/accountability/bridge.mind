@@ -1,0 +1,29 @@
+/**
+ * Uses responsibility as a path from problem to repair.
+ *
+ * Core question: "What needs to happen now?"
+ *
+ * @status hypothesis
+ */
+bridge(problem) {
+
+    BELIEF:
+        "Accepting responsibility gives me power to fix things."
+
+    WHEN:
+        responsibilityDetected
+
+    DO:
+        acknowledgeMyRole()
+        validateImpact()
+        confirmUnderstanding()
+        offerSolution()
+        followThrough()
+
+    RETURN:
+        repair
+
+    RISKS:
+        overOwningSharedProblems
+        takingResponsibilityForOthers
+}
