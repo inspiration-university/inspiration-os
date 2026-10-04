@@ -1,0 +1,42 @@
+/**
+ * Models a validation loop built around scarcity, idealization, and pursuit.
+ *
+ * "Princess" is an archetypal label only; the pattern is not gender-specific.
+ *
+ * @status hypothesis
+ */
+princessInHighCastle(person) {
+
+    WHEN:
+        internalSelfWorth < stable
+
+    DO:
+        externalValidationNeed = high
+        projectExceptionalIdentity()
+
+    // Pursuit can activate a rescuer/savior pattern in some observers.
+    IF pursuers > none:
+        activateSaviorScripts()
+
+    WHILE pursuers > none:
+
+        DO:
+            pursuerMotivation = pursuerMotivation + pursuitReward
+            selfImprovement = selfImprovement + pursuitMotivation
+
+            externalValidation =
+                externalValidation + pursuerAttention
+
+            // Distance preserves scarcity and therefore validation value.
+            relationalDistance =
+                relationalDistance + enoughToSustainPursuit
+
+    RETURN:
+        validationLoop
+
+    RISKS:
+        asymmetry
+        idealization
+        chronicDistance
+        dependenceOnPursuit
+}
