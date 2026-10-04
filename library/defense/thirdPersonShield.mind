@@ -1,0 +1,31 @@
+/**
+ * Creates psychological distance from failure by assigning it
+ * to a persona, role, or third-person identity.
+ *
+ * @status hypothesis
+ */
+thirdPersonShield(outcome) {
+
+    NEEDS:
+        sensitivityToCriticism >= high
+        criticismTolerance <= low
+        selfPresentationAwareness <= low
+
+    WHEN:
+        outcome = negative
+
+    DO:
+        persona = createAlternatePersona()
+        assignFailure(persona, outcome)
+
+        emotionalDistance =
+            emotionalDistance + high
+
+    RETURN:
+        relief
+
+    RISKS:
+        reducedLearning
+        fragmentedAccountability
+        avoidanceOfCorrectiveFeedback
+}
