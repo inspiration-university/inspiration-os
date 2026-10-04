@@ -1,0 +1,47 @@
+/**
+ * Models status elevation produced by scarce, intermittent attention
+ * from a highly valued persona.
+ *
+ * @status hypothesis
+ */
+prestigeBrandElevation(persona, recipient) {
+
+    NEEDS:
+        perceivedStatus(persona) >= high
+        accessTo(persona) <= scarce
+
+    WHEN:
+        personaEngages(recipient)
+
+    DO:
+        // Scarcity makes each interaction feel unusually valuable.
+        selectionSignal =
+            selectionSignal + scarcityValue
+
+        // Intermittent rewards can intensify attachment.
+        attachment =
+            attachment + intermittentValidation()
+
+        // Association can become a social credential.
+        reflectedStatus =
+            reflectedStatus + associationValue(persona)
+
+        // The recipient may value who they feel they become in the connection.
+        elevatedSelfImage =
+            elevatedSelfImage + reflectedStatus
+
+    WHILE contact = intermittent:
+
+        DO:
+            desireForContact = desireForContact + scarcityValue
+            recipientInvestment = recipientInvestment + medium
+
+    RETURN:
+        elevationFeeling
+
+    RISKS:
+        asymmetricInvestment
+        identityDependence
+        idealization
+        mistakingScarcityForReciprocity
+}
