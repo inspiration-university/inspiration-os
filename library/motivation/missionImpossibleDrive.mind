@@ -1,0 +1,52 @@
+/**
+ * Converts a large vision/reality gap into unusually strong motivation.
+ *
+ * @status hypothesis
+ */
+missionImpossibleDrive(goal) {
+
+    REQUIRES:
+        grandVision(goal)
+        valueComparison()
+        evaluateReality()
+        evaluateFeasibility(goal)
+
+    NEEDS:
+        selfConfidence >= high
+        importanceOfVision >= high
+        beliefVisionIsPossible >= high
+
+    WHEN:
+        visionRealityGap > significant
+
+    DO:
+        desiredReality = grandVision(goal)
+        currentReality = evaluateReality()
+        visionRealityGap =
+            valueComparison(desiredReality, currentReality)
+
+        feasibility = evaluateFeasibility(goal)
+
+    IF feasibility >= plausible:
+
+        DO:
+            // Gap becomes emotional energy.
+            frustration = frustration + medium
+            urgency = urgency + high
+
+            drive =
+                drive + visionRealityGap * beliefVisionIsPossible
+
+            riskTolerance = riskTolerance + medium
+            patience = patience - medium
+
+    RETURN:
+        missionDrive
+
+    RISKS:
+        impatience
+        tunnelVision
+        excessiveRiskTolerance
+        contemptForObstacles
+        burnout
+}
