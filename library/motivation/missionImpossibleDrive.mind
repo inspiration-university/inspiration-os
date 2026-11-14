@@ -5,48 +5,33 @@
  */
 missionImpossibleDrive(goal) {
 
+    PURPOSE:
+        turn a vision-reality gap into motivation
+
     REQUIRES:
         grandVision(goal)
-        valueComparison()
-        evaluateReality()
-        evaluateFeasibility(goal)
-
-    NEEDS:
-        selfConfidence >= high
-        importanceOfVision >= high
-        beliefVisionIsPossible >= high
+        powerfulBelief()
 
     WHEN:
-        visionRealityGap > significant
+        visionRealityGap = high
+        confidence = high
+        importanceOfVision = high
 
     DO:
-        desiredReality = grandVision(goal)
-        currentReality = evaluateReality()
-        visionRealityGap =
-            valueComparison(desiredReality, currentReality)
+        frustration = high
+        urgency = high
+        riskTolerance = high
+        patience = low
 
-        feasibility = evaluateFeasibility(goal)
+        drive = drive + visionRealityGap * urgency * frustration
 
-    IF feasibility >= plausible:
-
-        DO:
-            // Gap becomes emotional energy.
-            frustration = frustration + medium
-            urgency = urgency + high
-
-            drive =
-                drive + visionRealityGap * beliefVisionIsPossible
-
-            riskTolerance = riskTolerance + medium
-            patience = patience - medium
-
-    RETURN:
-        missionDrive
 
     RISKS:
         impatience
         tunnelVision
         excessiveRiskTolerance
-        contemptForObstacles
         burnout
+
+  RETURN:
+    drive
 }
