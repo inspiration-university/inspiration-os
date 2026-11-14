@@ -25,7 +25,6 @@ missionImpossibleDrive(goal) {
 
         drive = drive + visionRealityGap * urgency * frustration
 
-
     RISKS:
         impatience
         tunnelVision
